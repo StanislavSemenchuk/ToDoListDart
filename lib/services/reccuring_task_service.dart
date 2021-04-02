@@ -22,7 +22,7 @@ class PlainTaskService {
     return tasksList;
   }
 
-  Task getById(int id) {
+  ReccuringTask getById(int id) {
     return tasksList.firstWhere((e) => e.id == id) ??
         ArgumentError('Element with this id was not found');
   }
