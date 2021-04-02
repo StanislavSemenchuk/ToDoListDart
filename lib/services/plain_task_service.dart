@@ -5,16 +5,16 @@ class PlainTaskService {
   int lastId = 0;
 
   void addTask(Task task) {
-    task.id = InMemRepo.plainTaskLastId;
+    task.id = InMemRepo.taskLastId;
     InMemRepo.plainTasksList.add(task);
-    InMemRepo.plainTaskLastId++;
+    InMemRepo.taskLastId++;
   }
 
   void addMultiTasks(List<Task> tasks) {
     for (var item in tasks) {
-      item.id = InMemRepo.plainTaskLastId;
+      item.id = InMemRepo.taskLastId;
       InMemRepo.plainTasksList.add(item);
-      InMemRepo.plainTaskLastId++;
+      InMemRepo.taskLastId++;
     }
   }
 

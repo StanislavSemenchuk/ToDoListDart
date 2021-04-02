@@ -3,16 +3,16 @@ import 'package:radency_todo/models/reccuring_task.dart';
 
 class RecurringTaskService {
   void addTask(ReccuringTask task) {
-    task.id = InMemRepo.recurringTaskLastId;
+    task.id = InMemRepo.taskLastId;
     InMemRepo.recurringTasksList.add(task);
-    InMemRepo.plainTaskLastId++;
+    InMemRepo.taskLastId++;
   }
 
   void addMultiTasks(List<ReccuringTask> tasks) {
     for (var item in tasks) {
-      item.id = InMemRepo.recurringTaskLastId;
+      item.id = InMemRepo.taskLastId;
       InMemRepo.recurringTasksList.add(item);
-      InMemRepo.plainTaskLastId++;
+      InMemRepo.taskLastId++;
     }
   }
 

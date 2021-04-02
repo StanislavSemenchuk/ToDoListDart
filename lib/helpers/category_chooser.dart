@@ -26,5 +26,4 @@ taskCategory chooseCategory() {
     default:
       return taskCategory.medium;
   }
-  return taskCategory.medium;
 }
