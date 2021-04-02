@@ -5,5 +5,6 @@ class InMemRepo {
   static var plainTaskLastId = 0;
   static var plainTasksList = <PlainTask>[];
 
+  static var recurringTaskLastId = 0;
   static var recurringTasksList = <ReccuringTask>[];
 }

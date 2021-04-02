@@ -1,3 +1,6 @@
+import 'package:radency_todo/cli_menu.dart';
+
 void main(List<String> arguments) {
-  print('Hello world!');
+  var cliMenu = CliMenu();
+  cliMenu.drawMenu();
 }
