@@ -13,7 +13,13 @@ class ToDoList {
   var tasks = [];
   var plainService = PlainTaskService();
   var recurringService = RecurringTaskService();
+
   ToDoList() {
+    refreshTasks();
+  }
+
+  void refreshTasks() {
+    tasks = [];
     tasks.addAll(InMemRepo.plainTasksList);
     tasks.addAll(InMemRepo.recurringTasksList);
   }
@@ -32,6 +38,7 @@ class ToDoList {
         var category = chooseCategory();
         var t = creator.createPlainTask(taskName, category);
         plainService.addTask(t);
+        refreshTasks();
         break;
       case 'r':
         print('Please input task`s name\n');
@@ -40,6 +47,7 @@ class ToDoList {
         var plannedDay = chooseDay();
         var t = creator.createReccuringTask(taskName, category, plannedDay);
         recurringService.addTask(t);
+        refreshTasks();
         break;
       default:
         print('Only "p" and "r" char are allowed');
@@ -56,7 +64,8 @@ class ToDoList {
 
   void getAllTasks() {
     for (var task in tasks) {
-      print('${task.id}\n ${task.taskName}\n ${task.category}\n');
+      print(
+          '"id:${task.id}\n name:${task.taskName}\n category:${task.category}"\n');
     }
   }
 

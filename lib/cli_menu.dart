@@ -29,6 +29,7 @@ class CliMenu {
           toDoList.remove();
           break;
         default:
+          toDoList.getAllTasks();
       }
     }
   }
