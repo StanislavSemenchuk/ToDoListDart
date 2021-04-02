@@ -11,6 +11,13 @@ class ReccuringTask implements Task {
   taskCategory category;
 
   dayOfTheWeek plannedDay;
+
+  ReccuringTask(
+      String taskName, taskCategory category, dayOfTheWeek plannedDay) {
+    this.taskName = taskName;
+    this.category = category;
+    this.plannedDay = plannedDay;
+  }
 }
 
 enum dayOfTheWeek {

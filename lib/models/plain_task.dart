@@ -7,4 +7,9 @@ class PlainTask implements Task {
   String taskName;
   @override
   taskCategory category;
+
+  PlainTask(String taskName, taskCategory category) {
+    this.taskName = taskName;
+    this.category = category;
+  }
 }
