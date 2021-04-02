@@ -29,11 +29,11 @@ class CliMenu {
 
     var input = stdin.readLineSync();
 
-    TaskCreator creator;
+    var creator = TaskCreator();
 
     switch (input) {
       case 'p':
-        PlainTaskService plainService;
+        var plainService = PlainTaskService();
         print('Please input task`s name\n');
         var taskName = stdin.readLineSync();
         var category = chooseCategory();
@@ -41,7 +41,7 @@ class CliMenu {
         plainService.addTask(t);
         break;
       case 'r':
-        RecurringTaskService recurringService;
+        var recurringService = RecurringTaskService();
         print('Please input task`s name\n');
         var taskName = stdin.readLineSync();
         var category = chooseCategory();
