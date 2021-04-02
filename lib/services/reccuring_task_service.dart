@@ -1,16 +1,16 @@
-import 'package:radency_todo/models/task.dart';
+import 'package:radency_todo/models/reccuring_task.dart';
 
-class ToDoList {
-  final tasksList = <Task>[];
+class PlainTaskService {
+  final tasksList = <ReccuringTask>[];
   int lastId = 0;
 
-  void addTask(Task task) {
+  void addTask(ReccuringTask task) {
     task.id = lastId;
     tasksList.add(task);
     lastId++;
   }
 
-  void addMultiTasks(List<Task> tasks) {
+  void addMultiTasks(List<ReccuringTask> tasks) {
     for (var item in tasks) {
       item.id = lastId;
       tasksList.add(item);
@@ -35,7 +35,7 @@ class ToDoList {
     tasksList.removeRange(fromId, toId);
   }
 
-  void updateTask(int id, Task task) {
+  void updateTask(int id, ReccuringTask task) {
     tasksList[tasksList.indexWhere((e) => e.id == id)] = task;
   }
 }
